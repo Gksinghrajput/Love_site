@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For My Special One ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      background: white;
+      width: 320px;
+      max-width: 90%;
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      animation: pop 0.8s ease;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    h1 {
+      color: #ff4f7a;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #ff4f7a;
+      color: white;
+      border-radius: 25px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: #ff2f65;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .heart {
+      font-size: 50px;
+      animation: beat 1s infinite;
+      margin: 10px 0;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .message {
+      font-size: 15px;
+      color: #333;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+
+    .final {
+      font-size: 16px;
+      font-weight: bold;
+      color: #ff4f7a;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" id="page1">
+    <h1>Hey ❤️</h1>
+    <p>Mere paas tumhare liye kuch special hai...</p>
+    <button onclick="nextPage()">Click Here</button>
+  </div>
+
+  <div class="container hidden" id="page2">
+    <div class="heart">💖</div>
+    <h1>For You</h1>
+    <p class="message">
+      Tum meri life ki sabse beautiful smile ho 😌<br>
+      Tumhare bina sab kuch adhoora lagta hai 💕
+    </p>
+    <button onclick="nextPage2()">Next</button>
+  </div>
+
+  <div class="container hidden" id="page3">
+    <div class="heart">❤️</div>
+    <h1>I Have a Question...</h1>
+    <p class="message">
+      Kya tum meri life ka sabse special part banogi? 🥹💍
+    </p>
+    <button onclick="yes()">Yes 😍</button>
+    <button onclick="no()" style="background:#ccc;color:#333;margin-left:5px;">No 🙈</button>
+  </div>
+
+  <div class="container hidden" id="page4">
+    <div class="heart">💘</div>
+    <h1>Yayyy!!!</h1>
+    <p class="final">
+      Tum meri duniya ho ❤️<br>
+      I Love You So Much 😘
+    </p>
+  </div>
+
+  <script>
+    function nextPage() {
+      document.getElementById("page1").classList.add("hidden");
+      document.getElementById("page2").classList.remove("hidden");
+    }
+
+    function nextPage2() {
+      document.getElementById("page2").classList.add("hidden");
+      document.getElementById("page3").classList.remove("hidden");
+    }
+
+    function yes() {
+      document.getElementById("page3").classList.add("hidden");
+      document.getElementById("page4").classList.remove("hidden");
+    }
+
+    function no() {
+      alert("Socho phir se 😏❤️");
+    }
+  </script>
+
+</body>
+</html>
